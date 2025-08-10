@@ -9,14 +9,14 @@
 
 body {
   font-family: 'Helvetica Neue', 'Suisse Int’l', sans-serif;
-  background-color: #0A1A2F; /* Jetstream Navy */
+  background-color: #0A1A2F;
   color: #ffffff;
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 a {
-  color: #D4AF37; /* Gold */
+  color: #D4AF37;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -33,16 +33,16 @@ header {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 9999; /* ensure header stays on top */
 }
 
 .navbar {
   display: flex;
-  justify-content: flex-start; /* align items left for hamburger and nav */
+  justify-content: flex-start;
   align-items: center;
-  position: relative; /* for absolute centering of brand */
+  position: relative;
   gap: 2rem;
-  padding-left: 2rem; /* to avoid brand clashing with hamburger */
+  padding-left: 2rem;
 }
 
 .nav-links {
@@ -52,7 +52,7 @@ header {
 }
 
 .nav-links a {
-  color: #C0C0C0; /* Satin Silver */
+  color: #C0C0C0;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -61,7 +61,6 @@ header {
   color: #D4AF37;
 }
 
-/* Center the brand horizontally in the navbar */
 .brand {
   position: absolute;
   left: 50%;
@@ -74,7 +73,7 @@ header {
 .logo {
   height: 32px;
   width: auto;
-  display: none; /* Hide logo as requested */
+  display: none;
 }
 
 .brand-name {
@@ -100,6 +99,8 @@ header {
   color: #C0C0C0;
   cursor: pointer;
   transition: color 0.3s ease;
+  position: relative;
+  z-index: 10000; /* on top of header elements */
 }
 
 #darkModeToggle:hover {
@@ -117,6 +118,11 @@ header {
   color: #ffffff;
 }
 
+.hero-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .headline-text {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
@@ -124,17 +130,19 @@ header {
   letter-spacing: 1px;
   max-width: 800px;
   margin: 0 auto;
+  line-height: 1.3;
 }
 
-/* Nudge up the CTA button on desktop to better align vertically */
-.headline-desktop .cta-button {
-  margin-top: 1.25rem; /* reduced from 2rem */
-  position: relative;
-  top: -0.25em; /* nudged up by approx 25% of button height */
+.headline-text .break {
+  display: none;
 }
 
+/* CTA Styling */
 .cta-button {
   display: inline-block;
+  margin-top: 1.25rem;
+  position: relative;
+  top: -0.25em; /* nudge up */
   padding: 0.75rem 1.5rem;
   background: #D4AF37;
   color: #000;
@@ -155,7 +163,7 @@ header {
 ============================ */
 #services {
   padding: 4rem 2rem;
-  background-color: #000000; /* Onyx Black */
+  background-color: #000000;
   text-align: center;
   color: #ffffff;
 }
@@ -317,32 +325,16 @@ footer {
     font-size: 1.2rem;
   }
 
-  /* HERO LAYOUT RESPONSIVENESS */
-  .headline-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .headline-desktop {
-    display: none; /* hide desktop headline on mobile */
-  }
-
-  .headline-mobile {
-    display: block;
-    text-align: center;
-  }
-
-  .headline-mobile .headline-text {
+  .headline-text {
     font-size: 2rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
+  }
+
+  .headline-text .break {
+    display: inline;
   }
 
   .cta-button {
-    margin-top: 2rem; /* restore original margin on mobile */
-    position: static;
+    margin-top: 2rem;
     top: 0;
-    display: inline-block;
   }
 }
