@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -5,20 +7,20 @@
   <link rel="icon" type="image/x-icon" href="images/pl-icon.ico" />
   <title>Parklane Luxury | Redefining the Art of Elite Travel</title>
 
-  <!-- Dark mode class load before rendering -->
+  <!-- Apply dark mode early -->
   <script>
     document.documentElement.classList.add(
       localStorage.getItem('theme') === 'dark' ? 'dark-mode' : ''
     );
   </script>
 
-  <!-- Font Awesome Icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Custom Styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Custom Script (deferred for performance) -->
+  <!-- Scripts -->
   <script src="script.js" defer></script>
 </head>
 
@@ -44,53 +46,51 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="hero">
-  <div class="hero-wrapper">
-    <div class="hero-inline headline-container">
-      <!-- Desktop Version -->
-      <div class="headline-desktop">
-        <h1 class="headline-text">Luxury begins with peace of mind</h1>
-        <a href="#contact" class="cta-button">Book Your Journey</a>
-      </div>
+      <div class="hero-wrapper">
+        <div class="hero-inline headline-container">
+          <!-- Desktop -->
+          <div class="headline-desktop">
+            <h1 class="headline-text">Luxury begins with peace of mind</h1>
+            <a href="#contact" class="cta-button">Book Your Journey</a>
+          </div>
 
-      <!-- Mobile Version -->
-      <div class="headline-mobile">
-        <h1 class="headline-text">
-          Luxury<br>
-          begins with<br>
-          peace of mind
-        </h1>
-        <a href="#contact" class="cta-button">Book Your Journey</a>
+          <!-- Mobile -->
+          <div class="headline-mobile">
+            <h1 class="headline-text">
+              Luxury<br>
+              begins with<br>
+              peace of mind
+            </h1>
+            <a href="#contact" class="cta-button">Book Your Journey</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Services -->
-<section id="services">
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>Private Jet Charter</h3>
-      <p>From subscription-based availability to bespoke on-demand charters, Parklane Luxury offers precision in every journey.</p>
-    </div>
+    <section id="services">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Private Jet Charter</h3>
+          <p>From subscription-based availability to bespoke on-demand charters, Parklane Luxury offers precision in every journey.</p>
+        </div>
 
-    <div class="service-card">
-      <h3>Luxury Ground Fleet</h3>
-      <p>Chauffeured fleet ensures your arrival mirrors your status.</p>
-    </div>
-  </div>
-</section>
+        <div class="service-card">
+          <h3>Luxury Ground Fleet</h3>
+          <p>Chauffeured fleet ensures your arrival mirrors your status.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact -->
-    <section id="contact" style="text-align: center; padding: 4rem 2rem;">
+    <section id="contact">
       <h2>Begin Your Journey</h2>
       <p>Email: <a href="mailto:concierge@parklaneluxury.com">concierge@parklaneluxury.com</a></p>
       <p>Phone: +234 ...</p>
     </section>
   </main>
-
-  <script src="script.js" defer></script>
 
   <footer>
     <p>Stay connected</p>

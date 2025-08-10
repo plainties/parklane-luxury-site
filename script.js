@@ -1,52 +1,43 @@
-// Theme Toggle
-const darkToggle = document.getElementById('darkModeToggle');
-const root = document.documentElement;
+// Dark mode toggle and state persistence
+const darkModeToggle = document.getElementById('darkModeToggle');
 
-const setTheme = (mode) => {
-  root.classList.toggle('dark-mode', mode === 'dark');
-  localStorage.setItem('theme', mode);
-};
+darkModeToggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark-mode');
 
-if (darkToggle) {
-  darkToggle.addEventListener('click', () => {
-    const isDark = !root.classList.contains('dark-mode');
-    setTheme(isDark ? 'dark' : 'light');
-  });
-}
+  if (document.documentElement.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.removeItem('theme');
+  }
+});
 
-// Mobile Navigation Toggle
+// Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', String(!isExpanded));
-    navLinks.classList.toggle('active');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+
+  const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+  hamburger.setAttribute('aria-expanded', !expanded);
+});
+
+// Fade in service cards on scroll
+const serviceCards = document.querySelectorAll('.service-card');
+
+const observerOptions = {
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
   });
+}, observerOptions);
 
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-// Intersection Observer for #services
-const servicesSection = document.getElementById('services');
-
-if (servicesSection) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        servicesSection.classList.add('visible');
-        observer.unobserve(entry.target); // Animate only once
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-
-  observer.observe(servicesSection);
-}
+serviceCards.forEach(card => {
+  observer.observe(card);
+});
