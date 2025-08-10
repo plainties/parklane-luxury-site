@@ -1,43 +1,34 @@
-// Dark mode toggle and state persistence
-const darkModeToggle = document.getElementById('darkModeToggle');
+document.addEventListener('DOMContentLoaded', () => {
+  const darkToggle = document.getElementById('darkModeToggle');
+  const html = document.documentElement;
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
 
-darkModeToggle.addEventListener('click', () => {
-  document.documentElement.classList.toggle('dark-mode');
+  // Dark mode toggle
+  darkToggle.addEventListener('click', () => {
+    const isDark = html.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-  if (document.documentElement.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.removeItem('theme');
-  }
-});
-
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-  hamburger.setAttribute('aria-expanded', !expanded);
-});
-
-// Fade in service cards on scroll
-const serviceCards = document.querySelectorAll('.service-card');
-
-const observerOptions = {
-  threshold: 0.1,
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
-      observer.unobserve(entry.target);
+    // Update icon accordingly
+    const icon = darkToggle.querySelector('i');
+    if (isDark) {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
     }
   });
-}, observerOptions);
 
-serviceCards.forEach(card => {
-  observer.observe(card);
+  // Initialize icon based on saved theme
+  if (html.classList.contains('dark-mode')) {
+    darkToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+  }
+
+  // Hamburger toggle for mobile nav
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
 });
