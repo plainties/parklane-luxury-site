@@ -9,15 +9,14 @@
 
 body {
   font-family: 'Helvetica Neue', 'Suisse Int’l', sans-serif;
-  background-color: #0A1A2F;
+  background-color: #0A1A2F; /* Jetstream Navy */
   color: #ffffff;
   line-height: 1.6;
   transition: background 0.3s ease, color 0.3s ease;
-  scroll-behavior: smooth;
 }
 
 a {
-  color: #D4AF37;
+  color: #D4AF37; /* Gold */
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -39,8 +38,11 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* align items left for hamburger and nav */
   align-items: center;
+  position: relative; /* for absolute centering of brand */
+  gap: 2rem;
+  padding-left: 2rem; /* to avoid brand clashing with hamburger */
 }
 
 .nav-links {
@@ -50,7 +52,7 @@ header {
 }
 
 .nav-links a {
-  color: #C0C0C0;
+  color: #C0C0C0; /* Satin Silver */
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -59,7 +61,11 @@ header {
   color: #D4AF37;
 }
 
+/* Center the brand horizontally in the navbar */
 .brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -68,7 +74,7 @@ header {
 .logo {
   height: 32px;
   width: auto;
-  display: none; /* Logo hidden */
+  display: none; /* Hide logo as requested */
 }
 
 .brand-name {
@@ -111,31 +117,24 @@ header {
   color: #ffffff;
 }
 
-.headline-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.headline-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.headline-desktop {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.headline-desktop .headline-text {
-  margin: 0;
-  font-size: 2.2rem;
-}
-
-.headline-mobile {
-  display: none;
-  text-align: center;
+/* Nudge up the CTA button on desktop to better align vertically */
+.headline-desktop .cta-button {
+  margin-top: 1.25rem; /* reduced from 2rem */
+  position: relative;
+  top: -0.25em; /* nudged up by approx 25% of button height */
 }
 
 .cta-button {
   display: inline-block;
-  margin-top: 2rem;
   padding: 0.75rem 1.5rem;
   background: #D4AF37;
   color: #000;
@@ -143,7 +142,6 @@ header {
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
   transition: all 0.3s ease;
-  text-decoration: none;
 }
 
 .cta-button:hover {
@@ -157,9 +155,16 @@ header {
 ============================ */
 #services {
   padding: 4rem 2rem;
-  background-color: #000000;
+  background-color: #000000; /* Onyx Black */
   text-align: center;
   color: #ffffff;
+}
+
+#services h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #C0C0C0;
 }
 
 .services-grid {
@@ -203,31 +208,27 @@ header {
   color: #C0C0C0;
   padding: 4rem 2rem;
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto 4rem auto;
 }
 
 #contact h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  color: #D4AF37;
   margin-bottom: 1rem;
 }
 
 #contact p {
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
 }
 
 /* ============================
    FOOTER
 ============================ */
 footer {
-  background: #000000;
-  color: #C0C0C0;
+  background-color: #000;
   padding: 2rem;
   text-align: center;
-  font-size: 0.9rem;
+  color: #C0C0C0;
 }
 
 .social-links {
@@ -235,8 +236,8 @@ footer {
 }
 
 .social-links a {
-  margin: 0 0.5rem;
   color: #C0C0C0;
+  margin: 0 0.5rem;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
@@ -246,15 +247,90 @@ footer {
 }
 
 /* ============================
+   DARK MODE
+============================ */
+.dark-mode body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.dark-mode a {
+  color: #D4AF37;
+}
+
+.dark-mode a:hover {
+  color: #ffffff;
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: #000000;
+}
+
+.dark-mode .nav-links a {
+  color: #C0C0C0;
+}
+
+.dark-mode .nav-links a:hover {
+  color: #D4AF37;
+}
+
+.dark-mode .cta-button {
+  background: #D4AF37;
+  color: #000;
+}
+
+.dark-mode .cta-button:hover {
+  background: #C0C0C0;
+  color: #000;
+}
+
+/* ============================
    RESPONSIVE
 ============================ */
 @media (max-width: 768px) {
-  .headline-desktop {
+  .services-grid {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 2rem;
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  /* HERO LAYOUT RESPONSIVENESS */
+  .headline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headline-desktop {
+    display: none; /* hide desktop headline on mobile */
   }
 
   .headline-mobile {
     display: block;
+    text-align: center;
   }
 
   .headline-mobile .headline-text {
@@ -263,30 +339,10 @@ footer {
     margin-bottom: 1rem;
   }
 
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #000A1A;
-    flex-direction: column;
-    width: 200px;
-    padding: 1rem 0;
-    display: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 0.75rem 0;
-    text-align: center;
+  .cta-button {
+    margin-top: 2rem; /* restore original margin on mobile */
+    position: static;
+    top: 0;
+    display: inline-block;
   }
 }
-
-
