@@ -99,10 +99,13 @@ header {
 /* --- HERO --- */
 #hero {
   background: linear-gradient(rgba(10, 26, 47, 0.85), rgba(0, 0, 0, 0.85)),
-    url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    url('images/IMG_0377.jpeg') center/cover no-repeat;
   padding: 6rem 2rem;
   text-align: center;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-wrapper {
