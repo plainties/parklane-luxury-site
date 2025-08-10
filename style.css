@@ -269,6 +269,9 @@ footer {
   .brand {
     position: static;
     transform: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
 
