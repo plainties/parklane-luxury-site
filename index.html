@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="images/pl-icon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>Parklane Luxury | Redefining the Art of Elite Travel</title>
+
+  <script>
+    document.documentElement.classList.add(
+      localStorage.getItem('theme') === 'dark' ? 'dark-mode' : ''
+    );
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="brand">
+        <img src="images/parklane-logo.svg" alt="Parklane Luxury Logo" class="logo" />
+        <span class="brand-name">Parklane Luxury</span>
+      </div>
+
+      <button id="darkModeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-wrapper">
+        <div class="hero-inline">
+          <h1>
+            <span class="headline-text">
+              From Tarmac to Destination,<br class="mobile-break"> Elevate Every Mile.
+            </span>
+          </h1>
+          <a href="#contact" class="cta-button">Book Your Journey</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2 style="font-family: 'Playfair Display', serif;">Our Core Offerings</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3><i class="fas fa-plane-departure"></i> Private Jet Charter</h3>
+          <p>From subscription-based availability to bespoke on-demand charters, Parklane offers precision in every altitude-driven journey.</p>
+        </div>
+
+        <div class="service-card">
+          <h3><i class="fas fa-car-side"></i> Luxury Ground Fleet</h3>
+          <p>Chauffeured or self-driven, our silver and gold-accented fleet ensures your road arrival mirrors your flight's excellence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="text-align: center; padding: 4rem 2rem;">
+      <h2>Let's Begin Your Journey</h2>
+      <p>Email: <a href="mailto:concierge@parklaneluxury.com">concierge@parklaneluxury.com</a></p>
+      <p>Phone: +1 (800) 555-PLUX</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+
+  <footer>
+    <p>Follow Our Journey</p>
+    <div class="social-links">
+      <a href="https://instagram.com/parklaneluxury" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/company/parklaneluxury" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:concierge@parklaneluxury.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 Parklane Luxury. All rights reserved.</p>
+  </footer>
+</body>
+</html>
