@@ -303,4 +303,49 @@ footer {
   .brand-name {
     font-size: 1.2rem;
   }
+
+/* ============================
+   HERO LAYOUT RESPONSIVENESS
+============================ */
+.headline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.headline-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headline-desktop .headline-text {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.headline-mobile {
+  display: none;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .headline-desktop {
+    display: none;
+  }
+
+  .headline-mobile {
+    display: block;
+  }
+
+  .headline-mobile .headline-text {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+  }
+}
+
