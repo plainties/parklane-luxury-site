@@ -96,11 +96,13 @@ header {
 }
 
 /* HERO */
+/* --- HERO --- */
 #hero {
   background: linear-gradient(rgba(10, 26, 47, 0.85), rgba(0, 0, 0, 0.85)),
     url('images/jet-hangar-night.jpg') center/cover no-repeat;
   padding: 6rem 2rem;
   text-align: center;
+  color: #ffffff;
 }
 
 .hero-wrapper {
@@ -108,21 +110,42 @@ header {
   margin: 0 auto;
 }
 
+.hero-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-image-top,
+.hero-image-bottom {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Headline */
 .headline-text {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: 1px;
   max-width: 800px;
-  margin: 0 auto;
   line-height: 1.3;
-  color: #fff;
 }
 
 .headline-text .break {
   display: none;
 }
 
+/* CTA Button */
 .cta-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -132,7 +155,6 @@ header {
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
   transition: all 0.3s ease;
-  margin-top: 1.25rem;
 }
 
 .cta-button:hover {
@@ -140,6 +162,53 @@ header {
   color: #000;
   box-shadow: 0 0 15px rgba(192, 192, 192, 0.5);
 }
+
+/* Desktop: headline and button inline */
+@media (min-width: 769px) {
+  .hero-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-image-top,
+  .hero-image-bottom {
+    flex-basis: 100%;
+    max-width: 600px;
+  }
+
+  #hero {
+    text-align: center;
+  }
+
+  .headline-text {
+    margin: 0;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .headline-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .headline-text .break {
+    display: inline;
+  }
+
+  .cta-button {
+    margin-top: 1.5rem;
+  }
+
+  .hero-image-top,
+  .hero-image-bottom {
+    max-width: 100%;
+  }
+}
+
 
 /* Book Your Journey inline for desktop */
 .cta-button.desktop-inline {
