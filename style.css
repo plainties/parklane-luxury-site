@@ -247,10 +247,19 @@ header {
 }
 
 .service-card {
-  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+  background-color: #000; /* Fallback */
+  color: #fff;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .service-card h3 {
@@ -261,6 +270,32 @@ header {
 
 .service-card p {
   color: #C0C0C0;
+}
+
+
+.service-card h3,
+.service-card p {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* dark overlay for readability */
+  z-index: 1;
+}
+
+/* Specific card backgrounds */
+.private-jet {
+  background-image: url('images/IMG_0376.jpeg');
+}
+
+.luxury-car {
+  background-image: url('images/IMG_0375.jpeg');
 }
 
 /* CONTACT */
