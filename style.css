@@ -298,8 +298,8 @@ header {
 
 .luxury-car {
   background-image: url('images/IMG_0375.jpg');
-  background-size: 133%;               /* ~1/0.75 = 133% to show only 75% */
-  background-position: bottom right;
+  background-size: 100%;               /* ~1/0.75 = 133% to show only 75% */
+  background-position: center;
   background-repeat: no-repeat;
 }
 
