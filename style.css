@@ -260,6 +260,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.6); /* adds depth at bottom */
 }
 
 .service-card h3 {
