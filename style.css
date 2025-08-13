@@ -263,13 +263,15 @@ header {
 }
 
 .service-card h3 {
+  font-size: 1.4rem;
   color: #D4AF37;
   font-family: 'Playfair Display', serif;
   margin-bottom: 0.5rem;
 }
 
 .service-card p {
-  color: #C0C0C0;
+  color: #fff;
+  font-size: 1rem;
 }
 
 
@@ -296,6 +298,7 @@ header {
 
 .luxury-car {
   background-image: url('images/IMG_0375.jpeg');
+  background-position: bottom right;
 }
 
 /* CONTACT */
