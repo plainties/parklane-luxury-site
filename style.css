@@ -231,6 +231,21 @@ header {
   display: none;
 }
 
+/* TAILORED INTRO */
+.tailored-intro {
+  background: linear-gradient(to bottom, #0A1A2F 0%, #000 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.tailored-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #D4AF37;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+}
+
 /* SERVICES */
 #services {
   padding: 4rem 2rem;
@@ -278,6 +293,9 @@ header {
 
 .service-card h3,
 .service-card p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
   position: relative;
   z-index: 2;
   text-align: center;
