@@ -31,4 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.setAttribute('aria-expanded', !expanded);
     navLinks.classList.toggle('show');
   });
+
+  // ✅ Close mobile nav after link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', false);
+      }
+    });
+  });
 });
