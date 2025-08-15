@@ -1,0 +1,1 @@
+https://parklane-luxury.netlify.app/*  https://www.theparklaneluxury.com/:splat  301!
