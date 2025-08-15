@@ -512,6 +512,17 @@ footer {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ddd;
+}
+
+.dark-mode .contact-form button {
+  background: #D4AF37;
+  color: #000;
+}
+
 .dark-mode footer {
   background-color: #111;
   color: #aaa;
