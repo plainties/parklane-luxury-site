@@ -23,6 +23,11 @@ a:hover {
   color: #fff;
 }
 
+/* Hide visually but keep in DOM */
+.hidden {
+  display: none;
+}
+
 /* NAVIGATION */
 header {
   background: rgba(0, 0, 0, 0.7);
