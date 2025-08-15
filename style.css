@@ -256,6 +256,13 @@ header {
   letter-spacing: 1px;
 }
 
+/* Desktop version: increased vertical padding */
+@media (min-width: 769px) {
+  .tailored-intro {
+    padding: 8rem 2rem;
+  }
+}
+
 /* SERVICES */
 #services {
   padding: 4rem 2rem;
