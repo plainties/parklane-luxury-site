@@ -327,7 +327,7 @@ header {
   background: #0A1A2F;
   padding: 4rem 2rem;
   text-align: center;
-  color: #fff;
+  color: #C0C0C0;
 }
 
 #contact h2 {
@@ -401,62 +401,6 @@ header {
 
 .contact-info a {
   color: #D4AF37;
-}
-
-.contact-form-wrapper {
-  background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(0, 0, 0, 0.9)),
-    url('images/IMG_0376.jpeg') center/cover no-repeat;
-  padding: 4rem 2rem;
-  border-radius: 12px;
-  max-width: 960px;
-  margin: 0 auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-
-.contact-form-wrapper h2 {
-  font-family: 'Playfair Display', serif;
-  color: #D4AF37;
-  margin-bottom: 2rem;
-  text-align: center;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-.contact-form-wrapper form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-form-wrapper input,
-.contact-form-wrapper textarea {
-  padding: 1rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  backdrop-filter: blur(4px);
-}
-
-.contact-form-wrapper input::placeholder,
-.contact-form-wrapper textarea::placeholder {
-  color: #ccc;
-}
-
-.contact-form-wrapper button {
-  background: #D4AF37;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form-wrapper button:hover {
-  background: #C0C0C0;
 }
 
 @media (max-width: 600px) {
