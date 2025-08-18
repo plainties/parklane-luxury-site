@@ -59,6 +59,11 @@
         .then(() => {
           form.reset();
           modal.classList.remove('hidden');
+
+          // Auto-close modal after 5 seconds
+          setTimeout(() => {
+            modal.classList.add('hidden');
+          }, 5000);
         })
         .catch((error) => alert("There was an error submitting the form."));
       });
