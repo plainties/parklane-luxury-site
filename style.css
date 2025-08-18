@@ -366,6 +366,12 @@ header {
   gap: 1rem;
 }
 
+.contact-form .form-group {
+  flex: 1;
+  min-width: 200px;
+  border: 1px dashed red;
+}
+
 .form-row {
   display: flex;
   flex-direction: row;
@@ -423,6 +429,10 @@ header {
 @media (max-width: 600px) {
   .form-row {
     flex-direction: column;
+  }
+  
+  .contact-form .form-group {
+    width: 100%;
   }
 }
 
